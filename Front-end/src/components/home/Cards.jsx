@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IoStarSharp } from "react-icons/io5";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+import { Link } from 'react-router-dom'
 
 function Card({ images, location, date, hostname, cost }) {
   const [CardHover, SetCardHover] = useState(false);
@@ -31,13 +32,13 @@ function Card({ images, location, date, hostname, cost }) {
         onMouseEnter={handleCardHover}
         onMouseLeave={handleCardUnhover}
       >
-        <a href="#"> 
+        <Link to="/property-details"> 
           <img
             src={images[currentIndex]} // Display the image based on current index
             alt="card"
             className="w-full h-64 object-cover rounded-xl" // Responsive image size
           />
-        </a>
+        </Link >
         <i className="fa-regular fa-heart absolute top-2 right-2 text-white z-10"></i>
         <div className="absolute top-2 left-2 text-xs font-semibold bg-white rounded-full p-1 px-2 z-10">
           <p>Guest favorite</p>
