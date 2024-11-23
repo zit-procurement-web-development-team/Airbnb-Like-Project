@@ -95,7 +95,7 @@ const Footer = () => {
           <div className="flex flex-wrap -m-4 w-full">
             <div className="grid pl-3 m-auto grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
               {filteredLinks.slice(0, visibleItems).map((inspireLink, index) => (
-                <InspirationLink
+                <InspirationLink 
                   key={index}
                   description={inspireLink.description}
                   title={inspireLink.title}

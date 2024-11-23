@@ -58,10 +58,10 @@ const BookLocation = () => {
         
         }}
       >
-        <h3>Where</h3>
+        <h3 className="px-2">Where</h3>
         <input
-          className="pxy py-2 border-none"
-          placeholder="Type your destination"
+          className="pxy p-2 border-none "
+          placeholder="Search destinations"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)} // Allow typing in the input
         />

@@ -76,13 +76,13 @@ const Popup = () => {
   return (
     <div>
       {/* This is the div where the popup will be triggered when clicked */}
-      <div className="flex justify-center cursor-pointer" onClick={toggleModal}>
+      <div className="flex justify-between items-center  w-[250px] cursor-pointer" onClick={toggleModal}>
         <h3>
           Who <br />
-          <span>Add guests</span>
+          <span className="text-gray-500">Add guests</span>
         </h3>
         <i
-          className="fa fa-search cursor-pointer bg-red-500 text-white rounded-full"
+          className="fa fa-search  cursor-pointer text-2xl p-2 bg-red-500 text-white rounded-lg"
           aria-hidden="true"
         ></i>
       </div>
