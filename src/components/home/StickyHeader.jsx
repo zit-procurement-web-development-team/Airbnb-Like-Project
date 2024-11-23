@@ -7,7 +7,7 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from "./SearchBar";
 import AirbnbHome from "./AirbnbHome";
-import Logo from "/assets/images/download.png";
+import Logo from "/assets/images/STARRWAY-02.png";
 import SettingPopUp from "./SettingPopUp";
 import LanguageAndRegion from "./LanguageAndRegion";
 import SubNav2 from "./SubNav2";
@@ -50,7 +50,7 @@ const StickyHeader = () => {
         <LargerSearchBar />
       </div>
       <div>
-        <SubNav2/>
+        <SubNav2/>  
       </div>
       
 
