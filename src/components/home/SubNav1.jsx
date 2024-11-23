@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import AirbnbHome from "./AirbnbHome";
-import Logo from "/assets/images/download.png";
-import LogoM from "/assets/images/airbnb.png";
+import Logo from "/assets/images/STARRWAY-02.png";
+import LogoM from "/assets/images/STARRWAY-02.png";
 import SettingPopUp from "./SettingPopUp";
 import LanguageAndRegion from "./LanguageAndRegion";
 
@@ -18,7 +18,7 @@ const SubNav1 = () => {
       {/* Desktop and large screens */}
       <div className="hidden md:flex justify-between items-center px-12 py-2">
         {/* Logo */}
-        <img src={Logo} alt="Airbnb Logo" width={100} />
+        <img src={Logo} alt="StarrWay Logo" width={160} />
 
 
         {/* Right side: Airbnb your home, language and region, settings */}
@@ -32,7 +32,7 @@ const SubNav1 = () => {
       {/* Mobile screens */}
       <div className="md:hidden flex justify-between items-center px-6 py-2">
         {/* Logo */}
-        <img src={LogoM} alt="Airbnb Logo" width={80} />
+        <img src={LogoM} alt="StarrWay Logo" width={80} />
 
 
         {/* Menu button for mobile */}

@@ -32,7 +32,7 @@ const SettingPopUp = () => {
           <button className="w-60 text-left p-2 hover:bg-slate-200">Log in</button>
           <hr />
           <button className="w-60 text-left p-2 hover:bg-slate-200">Gift card</button>
-          <button className="w-60 text-left p-2 hover:bg-slate-200">Airbnb your home</button>
+          <button className="w-60 text-left p-2 hover:bg-slate-200">StarrWay your home</button>
           <button className="w-60 text-left p-2 hover:bg-slate-200">Host an experience</button>
           <button className="w-60 text-left p-2 hover:bg-slate-200">Help center</button>
         </div>

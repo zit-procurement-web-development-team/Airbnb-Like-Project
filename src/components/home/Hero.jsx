@@ -9,8 +9,8 @@ import image5 from "/assets/images/beach4.webp";
 const cardData = [
   { date: "02 May - 4 Jan", cost: "$44 USD", location: "Freetown, Sierra Leone", hostname: "Victoria", images: [image1, image2, image3, image4, image5] },
   { date: "02 Mar - 4 Feb", cost: "$64 USD", location: "Abuja, Nigeria", hostname: "Thompson", images: [image5, image4, image3, image2, image1] },
-  { date: "15 Apr - 15 Jun", cost: "$88 USD", location: "Accra, Ghana", hostname: "Kwame", images: [image1, image2, image3, image4, image5] },
-  { date: "01 Jul - 15 Aug", cost: "$120 USD", location: "Lagos, Nigeria", hostname: "Ademola", images: [image1, image2, image3, image4, image5] },
+  { date: "15 Apr - 15 Jun", cost: "$88 USD", location: "Accra, Ghana", hostname: "Kwame", images: [image2, image1, image3, image4, image5] },
+  { date: "01 Jul - 15 Aug", cost: "$120 USD", location: "Lagos, Nigeria", hostname: "Ademola", images: [image3, image2, image1, image4, image5] },
   { date: "10 May - 20 Aug", cost: "$100 USD", location: "Monrovia, Liberia", hostname: "Ellen", images: [image1, image2, image3, image4, image5] },
   { date: "18 Feb - 28 Apr", cost: "$150 USD", location: "Nairobi, Kenya", hostname: "Mwangi", images: [image1, image2, image3, image4, image5] },
   { date: "22 Apr - 30 May", cost: "$55 USD", location: "Dakar, Senegal", hostname: "Omar", images: [image1, image2, image3, image4, image5] },
@@ -40,10 +40,10 @@ function Hero() {
         />
       ))}
     </main>
-    {/* <div className="m-auto flex justify-center flex-col items-center mb-4" >
+     <div className="m-auto flex justify-center flex-col items-center mb-4" >
       <p className="font-semibold text-sm">Continue exploring beach homes</p>
     <button className="bg-black text-white w-[6rem] text-xs font-bold h-[2.5rem] rounded-md mt-1 hover:opacity-70">See more</button>
-    </div> */}
+    </div> 
     </div>
   );
 }
