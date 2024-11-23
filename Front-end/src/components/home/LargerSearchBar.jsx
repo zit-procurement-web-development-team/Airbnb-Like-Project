@@ -1,10 +1,10 @@
 import React from "react";
-import CheckOutDatePicker from "./CheckOutPicker";
-import CheckInDatePicker from "./CheckInDatePicker";
 import BookLocation from "./BookLocation";
+import CheckDatePicker from "./CheckDatePicker";
+import AddGuests from "./AddGuests";
 const LargerSearchBar = () =>{
     return(
-        <div className="flex gap-4  rounded-full shadow-md border justify-center items-center text-base w-[700px]">
+        <div className="flex justify-center  gap-10 mt-3 rounded-full shadow-md border   items-center text-base w-[1000px]">
     
        {/* <div className="text-sm font-semibold text-black rounded-full border-none">
         <h3>Where</h3>
@@ -15,16 +15,16 @@ const LargerSearchBar = () =>{
       </div> */}
       {/*    */}
       <BookLocation />
-      <CheckInDatePicker />
-     <CheckOutDatePicker />
-      <div className="flex">
+    <CheckDatePicker />
+      {/* <div className="flex justify-center">
         <h3>Who <br /> <span>Add guests</span></h3>
         <i
-        className="fa fa-search cursor-pointer bg-red-500 text-white rounded-full p-2"
+        className="fa fa-search cursor-pointer bg-red-500 text-white rounded-full"
         aria-hidden="true"
       ></i>
       </div>
-      
+       */}
+       <AddGuests />
     </div>
     )
 }

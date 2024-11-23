@@ -52,17 +52,15 @@ const BookLocation = () => {
       {/* The div that will trigger the map popup */}
       <div
         onClick={handleMapClick}
-        className="text-sm font-semibold text-black rounded-full border-none cursor-pointer p-3"
+        className="text-sm font-semibold text-black rounded-full border-none cursor-pointer"
         style={{
           width: "200px",
-          textAlign: "center",
-          backgroundColor: "#f0f0f0",
-          margin: "20px",
+        
         }}
       >
         <h3>Where</h3>
         <input
-          className="px-5 py-2 border-none"
+          className="pxy py-2 border-none"
           placeholder="Type your destination"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)} // Allow typing in the input
@@ -82,7 +80,7 @@ const BookLocation = () => {
             padding: "20px",
             boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
             borderRadius: "10px",
-            zIndex: 9999,
+            zIndex: 1,
             marginTop: "10px",
           }}
         >
