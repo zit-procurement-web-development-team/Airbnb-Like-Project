@@ -70,7 +70,7 @@ function ListYourHome() {
           </section>
           <section class="text-gray-600 body-font flex w-full gap-9 lg:w-7/3">
 
-          <div className="max-w-sm h-50 rounded-lg overflow-hidden  w-full rounded shadow-lg bg-gray-100">
+          <div className="max-w-sm h-50 overflow-hidden  w-full rounded shadow-lg bg-gray-100">
       {/* Image section */}
       <img
         src={sma}
@@ -87,7 +87,7 @@ function ListYourHome() {
       </div>
       
       {/* Footer section */}
-      <div className="px-6 py-4 flex justify-center flex items-center">
+      <div className="px-6 py-4 justify-center flex items-center">
        <div className='bg-white rounded p-3 flex '>
 
         <div className='flex'>
@@ -99,8 +99,8 @@ function ListYourHome() {
         |
         |
     <div className=' font-bold text-xl text-black justify-center p-2'>
-      <span className='block flex font-bold text-black justify-center text-xl'>7</span>
-      <span className='block flex font-bold text-black'>years hosting</span>
+      <span className='block font-bold text-black justify-center text-xl'>7</span>
+      <span className='block font-bold text-black'>years hosting</span>
     </div>
         
         </div>
@@ -120,7 +120,7 @@ function ListYourHome() {
 
 
 
-    <div className="max-w-sm h-50 rounded-lg overflow-hidden rounded  w-full shadow-lg bg-gray-100">
+    <div className="max-w-sm h-50 overflow-hidden rounded  w-full shadow-lg bg-gray-100">
       {/* Image section */}
       <img
         src={sma}
@@ -137,7 +137,7 @@ function ListYourHome() {
       </div>
       
       {/* Footer section */}
-      <div className="px-6 py-4 flex justify-center flex items-center">
+      <div className="px-6 py-4 flex justify-center items-center">
        <div className='bg-white rounded p-3 flex '>
 
         <div className='flex'>
@@ -149,8 +149,8 @@ function ListYourHome() {
         |
         |
     <div className=' font-bold text-black justify-center p-2'>
-      <span className='block flex font-bold text-black justify-center'>7</span>
-      <span className='block flex font-bold text-black'>years hosting</span>
+      <span className='block font-bold text-black justify-center'>7</span>
+      <span className='block font-bold text-black'>years hosting</span>
     </div>
         
         </div>
@@ -161,7 +161,7 @@ function ListYourHome() {
 
 
 
-    <div className="max-w-sm h-50 rounded-lg overflow-hidden rounded  w-full shadow-lg bg-gray-100">
+    <div className="max-w-sm h-50  overflow-hidden rounded  w-full shadow-lg bg-gray-100">
       {/* Image section */}
       <img
         src={sma}
@@ -178,7 +178,7 @@ function ListYourHome() {
       </div>
       
       {/* Footer section */}
-      <div className="px-6 py-4 flex justify-center flex items-center">
+      <div className="px-6 py-4 flex justify-center items-center">
        <div className='bg-white rounded p-3 flex '>
 
         <div className='flex'>
@@ -190,8 +190,8 @@ function ListYourHome() {
         |
         |
     <div className=' font-bold text-xl text-black justify-center p-2'>
-      <span className='block flex font-bold text-black justify-center text-xl'>7</span>
-      <span className='block flex font-bold text-black'>years hosting</span>
+      <span className='block font-bold text-black justify-center text-xl'>7</span>
+      <span className='block font-bold text-black'>years hosting</span>
     </div>
         
         </div>
@@ -296,7 +296,7 @@ function ListYourHome() {
 
 {/* section CoverAirBnb */}
 <section class="text-gray-600 body-font container mx-auto flex items-center justify-center text-center flex-col">
-  <div class="container px-5 py-24 mx-auto flex flex-wrap flex-col container mx-auto flex items-center justify-center text-center flex-col">
+  <div class="container px-5 py-24 mx-auto flex flex-wrap flex-colitems-center justify-center text-center">
   <img
             className="w-48 justify-center"
             alt=""
@@ -304,7 +304,7 @@ function ListYourHome() {
           />
     <div class="flex flex-col text-center w-full"> 
       <h1 class="text-6xl font-medium title-font mb-4 mt-3 text-gray-900">However you host, <br />you’re protected</h1>
-      <p class="mx-auto text-3xl lg:w-3/5  leading-relaxed text-base">Top-to-bottom protection, included every time you host your home on Airbnb.</p>
+      <p class="mx-auto text-3xl lg:w-3/5  leading-relaxed ">Top-to-bottom protection, included every time you host your home on Airbnb.</p>
     </div>
   </div>
 </section>
@@ -357,7 +357,7 @@ function ListYourHome() {
     {/* ---------------------------------------------------------------- */}
     <section class="text-gray-600 body-font">
   <div class="container px-9 mx-auto p-4 md:w-5/3 sm:mb-0 mb-6 text-center">
-  <h2 className='text-xl title-font text-gray-900 mt-5 md:w-2/3 mb-20 mx-auto text-4xl'>All the tools you need to host, all in one app</h2>
+  <h2 className=' title-font text-gray-900 mt-5 md:w-2/3 mb-20 mx-auto text-4xl'>All the tools you need to host, all in one app</h2>
     <div class="flex flex-col">
      
       

@@ -53,7 +53,7 @@ function SecondHero() {
             </div>
 
             {/* Search Bar Section */}
-            <div className="mt-8 w-full max-w-md mx-auto mt-[-20px]">
+            <div className=" w-full max-w-md mx-auto mt-[-20px]">
               <input
                 type="text"
                 value={searchQuery}
