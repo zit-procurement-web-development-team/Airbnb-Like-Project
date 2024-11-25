@@ -29,6 +29,8 @@ import { IoKeyOutline } from "react-icons/io5";
 import { FaMessage } from "react-icons/fa6";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { RxValue } from "react-icons/rx";
+import { Link } from "react-router-dom"
+
 // button message
  import React, {useState} from 'react';
 import DatePicker from "react-datepicker";
@@ -67,12 +69,22 @@ function Card () {
     {/* image section */}
 
    <div className='grid grid-cols-2 sm:grid-cols-4 mx-4 sm:mx-12 md:mx-24 lg:mx-48 gap-2'>
-    <img src={PropertyDImg1} alt="" className=' row-span-2 col-span-2 ' />
-    <img src={PropertyDImg2} alt="" className='w-44 h-30 rounded-sm' />
-    <img src={PropertyDImg3} alt="" className='w-44 h-30 rounded-sm' />
-    <img src={PropertyDImg4} alt="" className='w-44 h-30 rounded-sm' />
-    <img src={PropertyDImg5} alt="" className='w-44 h-30 rounded-sm' />
-    <div className='text-center text-sm text-gray-600 flex justify-evenly m-1 w-36 bg-gray-200
+    <Link to="/property-tour">
+      <img src={PropertyDImg1} alt="" className=' row-span-2 col-span-2 ' />
+    </Link>
+    <Link to="/property-tour">
+      <img src={PropertyDImg2} alt="" className='w-44 h-30 rounded-sm' />
+    </Link>  
+    <Link to="/property-tour">
+      <img src={PropertyDImg3} alt="" className='w-44 h-30 rounded-sm' />
+    </Link>  
+    <Link to="/property-tour">
+      <img src={PropertyDImg4} alt="" className='w-44 h-30 rounded-sm' />
+    </Link>  
+    <Link to="/property-tour">
+      <img src={PropertyDImg5} alt="" className='w-44 h-30 rounded-sm' />
+    </Link>  
+      <div className='text-center text-sm text-gray-600 flex justify-evenly m-1 w-36 bg-gray-200
         border border-black h-5 align-text-top relative bottom-16 left-full rounded'>
     <TbGridDots />
     <p>Show all photos</p>

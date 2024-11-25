@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom"
 
 const SettingPopUp = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,7 +33,7 @@ const SettingPopUp = () => {
           <button className="w-60 text-left p-2 hover:bg-slate-200">Log in</button>
           <hr />
           <button className="w-60 text-left p-2 hover:bg-slate-200">Gift card</button>
-          <button className="w-60 text-left p-2 hover:bg-slate-200">StarrWay your home</button>
+          <Link to="/stay-way-your-home" className="w-60 text-left p-2 hover:bg-slate-200">StarrWay your home</Link>
           <button className="w-60 text-left p-2 hover:bg-slate-200">Host an experience</button>
           <button className="w-60 text-left p-2 hover:bg-slate-200">Help center</button>
         </div>
