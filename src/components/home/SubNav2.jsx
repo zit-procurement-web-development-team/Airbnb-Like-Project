@@ -1,118 +1,139 @@
-import React, { useState } from "react";
-import HeaderSearchBar from "./HeaderSearchBar";
+import React, { useState, useRef, useEffect } from "react";
 import { TfiAngleRight, TfiAngleLeft } from "react-icons/tfi";
+import { FaFilter } from "react-icons/fa";
+import FilterModal from './FilterModal';
 
-// Importing images
-import TrendingIcon from "/assets/images/trending.jpg";
-import Icon1 from "/assets/images/tp1 (1).jpg";
-import Icon2 from "/assets/images/tp1 (2).jpg";
-import Icon3 from "/assets/images/tp1 (3).jpg";
-import Icon4 from "/assets/images/tp1 (4).jpg";
-import Icon5 from "/assets/images/tp1 (5).jpg";
-import Icon6 from "/assets/images/tp1 (6).jpg";
-import Icon7 from "/assets/images/tp1 (7).jpg";
-import Icon8 from "/assets/images/tp1 (8).jpg";
-import Icon42 from "/assets/images/tp1 (42).jpg";
-import Icon10 from "/assets/images/tp1 (10).jpg";
-import Icon11 from "/assets/images/tp1 (11).jpg";
-import Icon12 from "/assets/images/tp1 (12).jpg";
-import Icon13 from "/assets/images/tp1 (13).jpg";
-import Icon14 from "/assets/images/tp1 (14).jpg";
-import Icon15 from "/assets/images/tp1 (15).jpg";
-import Icon16 from "/assets/images/tp1 (16).jpg";
-import Icon17 from "/assets/images/tp1 (17).jpg";
-import Icon18 from "/assets/images/tp1 (18).jpg";
-import Icon19 from "/assets/images/tp1 (19).jpg";
-import Icon20 from "/assets/images/tp1 (20).jpg";
-import Icon21 from "/assets/images/tp1 (21).jpg";
-import Icon22 from "/assets/images/tp1 (22).jpg";
-import Icon23 from "/assets/images/tp1 (23).jpg";
-import Icon24 from "/assets/images/tp1 (24).jpg";
-import Icon25 from "/assets/images/tp1 (25).jpg";
-import Icon26 from "/assets/images/tp1 (26).jpg";
-import Icon27 from "/assets/images/tp1 (27).jpg";
-import Icon28 from "/assets/images/tp1 (28).jpg";
+const propertyTypes = [
+  { id: 'trending', label: 'Trending', icon: '🔥' },
+  { id: 'beachfront', label: 'Beachfront', icon: '🏖' },
+  { id: 'amazing_pools', label: 'Amazing pools', icon: '🏊‍♂️' },
+  { id: 'islands', label: 'Islands', icon: '🏝' },
+  { id: 'amazing-views', label: 'Amazing views', icon: '🏔' },
+  { id: 'tiny-homes', label: 'Tiny homes', icon: '🏡' },
+  { id: 'design', label: 'Design', icon: '🎨' },
+  { id: 'camping', label: 'Camping', icon: '⛺' },
+  { id: 'arctic', label: 'Arctic', icon: '❄️' },
+  { id: 'caves', label: 'Caves', icon: '🗿' },
+  { id: 'surfing', label: 'Surfing', icon: '🏄‍♂️' },
+  { id: 'lakefront', label: 'Lakefront', icon: '🌊' },
+  { id: 'skiing', label: 'Skiing', icon: '⛷' },
+  { id: 'castles', label: 'Castles', icon: '🏰' },
+  { id: 'countryside', label: 'Countryside', icon: '🌳' },
+  { id: 'luxe', label: 'Luxe', icon: '✨' },
+  { id: 'vineyard', label: 'Vineyard', icon: '🍷' },
+  { id: 'historical', label: 'Historical', icon: '🏛' }
+];
 
-const SubNav2 = () => {
-  const iconItems = [
-    { icon: TrendingIcon, discription: "Trending" },
-    { icon: Icon1, discription: "Amazing pools" },
-    { icon: Icon2, discription: "Icon1" },
-    { icon: Icon3, discription: "Icon1" },
-    { icon: Icon4, discription: "Icon1" },
-    { icon: Icon5, discription: "Icon1" },
-    { icon: Icon6, discription: "Golfing" },
-    { icon: Icon7, discription: "Arctic" },
-    { icon: Icon8, discription: "Cabins" },
-    { icon: Icon42, discription: "Cabins" },
-    { icon: Icon10, discription: "Icon1" },
-    { icon: Icon11, discription: "Vineyards" },
-    { icon: Icon12, discription: "Icon1" },
-    { icon: Icon13, discription: "Icon1" },
-    { icon: Icon14, discription: "Icon1" },
-    { icon: Icon15, discription: "Surfing" },
-    { icon: Icon16, discription: "Icon1" },
-    { icon: Icon17, discription: "Icon1" },
-    { icon: Icon18, discription: "Icon1" },
-    { icon: Icon19, discription: "Icon1" },
-    { icon: Icon20, discription: "Icon1" },
-    { icon: Icon21, discription: "Icon1" },
-    { icon: Icon22, discription: "Icon1" },
-    { icon: Icon23, discription: "Icon1" },
-    { icon: Icon24, discription: "Icon1" },
-    { icon: Icon25, discription: "Icon1" },
-    { icon: Icon26, discription: "Icon1" },
-    { icon: Icon27, discription: "Icon1" },
-    { icon: Icon28, discription: "Icon1" },
-  ];
+const SubNav2 = ({ onFiltersChange, onTypeChange, selectedType }) => {
+  const [showFilterModal, setShowFilterModal] = useState(false);
+  const [activeFilters, setActiveFilters] = useState(null);
+  const scrollContainerRef = useRef(null);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
 
-  const [startIndex, setStartIndex] = useState(0);
-  const itemsToShow = 15; // Show 6 icons on smaller screens
+  const handleFilterApply = (filters) => {
+    setActiveFilters(filters);
+    onFiltersChange(filters);
+    setShowFilterModal(false);
+  };
 
-  const handleMoveLeft = () => {
-    if (startIndex > 0) {
-      setStartIndex(startIndex - 1);
+  const handleTypeClick = (typeId) => {
+    onTypeChange(typeId === selectedType ? null : typeId);
+  };
+
+  const checkScrollButtons = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setShowLeftArrow(scrollLeft > 0);
+      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
     }
   };
 
-  const handleMoveRight = () => {
-    if (startIndex < iconItems.length - itemsToShow) {
-      setStartIndex(startIndex + 1);
+  useEffect(() => {
+    checkScrollButtons();
+    window.addEventListener('resize', checkScrollButtons);
+    return () => window.removeEventListener('resize', checkScrollButtons);
+  }, []);
+
+  const scroll = (direction) => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 200;
+      const newPosition = direction === 'left'
+        ? scrollContainerRef.current.scrollLeft - scrollAmount
+        : scrollContainerRef.current.scrollLeft + scrollAmount;
+      
+      scrollContainerRef.current.scrollTo({
+        left: newPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
   return (
-    <div className="relative flex justify-center items-center overflow-hidden py-5">
-      {/* Left arrow container with gradient */}
-      {startIndex > 0 && (
-        <div
-          onClick={handleMoveLeft}
-          className="absolute left-10 z-10  cursor-pointer rounded-full bg-gradient-to-r from-gray-800 to-transparent hover:opacity-80"
-        >
-          <TfiAngleLeft className="text-white text-3xl" />
-        </div>
-      )}
+    <div className="relative border-t border-gray-200">
+      <div className="max-w-[2520px] mx-auto xl:px-20 md:px-10 sm:px-2 px-4">
+        <div className="flex items-center justify-between py-3 my-2 md:py-4 md:my-3">
+          <div className="relative flex-1 max-w-[calc(100%-120px)]">
+            {showLeftArrow && (
+              <button
+                onClick={() => scroll('left')}
+                className="absolute -left-3 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md hover:shadow-lg transition hidden md:flex items-center justify-center"
+              >
+                <TfiAngleLeft size={12} />
+              </button>
+            )}
+            
+            <div
+              ref={scrollContainerRef}
+              className="flex space-x-6 md:space-x-8 overflow-x-auto scrollbar-hide relative"
+              onScroll={checkScrollButtons}
+            >
+              {propertyTypes.map((type) => (
+                <button
+                  key={type.id}
+                  onClick={() => handleTypeClick(type.id)}
+                  className={`flex flex-col items-center min-w-fit pb-1 md:pb-2 border-b-2 transition-all ${
+                    selectedType === type.id
+                      ? 'border-black text-black'
+                      : 'border-transparent text-gray-500 hover:border-gray-200 hover:text-black'
+                  }`}
+                >
+                  <span className="text-xl md:text-2xl mb-1">{type.icon}</span>
+                  <span className="text-[10px] md:text-xs whitespace-nowrap">{type.label}</span>
+                </button>
+              ))}
+            </div>
 
-      {/* Icons container */}
-      <div className="flex  overflow-hidden transition duration-300 z-0">
-        {iconItems.slice(startIndex, startIndex + itemsToShow).map((eachIcon, index) => (
-          <HeaderSearchBar
-            key={index}
-            icon={eachIcon.icon}
-            description={eachIcon.discription}
-          />
-        ))}
+            {showRightArrow && (
+              <button
+                onClick={() => scroll('right')}
+                className="absolute -right-3 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md hover:shadow-lg transition hidden md:flex items-center justify-center"
+              >
+                <TfiAngleRight size={12} />
+              </button>
+            )}
+          </div>
+
+          <div className="ml-4 flex-shrink-0">
+            <button
+              onClick={() => setShowFilterModal(true)}
+              className={`flex items-center gap-2 px-3 md:px-4 py-2 border rounded-lg hover:shadow-md transition ${
+                activeFilters ? 'border-black' : 'border-gray-200'
+              }`}
+            >
+              <FaFilter size={12} className="md:w-4 md:h-4" />
+              <span className="text-xs md:text-sm font-medium">Filters</span>
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* Right arrow container with gradient */}
-      {startIndex < iconItems.length - itemsToShow && (
-        <div
-          onClick={handleMoveRight}
-          className="absolute right-10 z-10  cursor-pointer rounded-full bg-gradient-to-l from-gray-400 to-transparent hover:opacity-80"
-        >
-          <TfiAngleRight className="text-white text-3xl" />
-        </div>
-      )}
+      <FilterModal
+        isOpen={showFilterModal}
+        onClose={() => setShowFilterModal(false)}
+        onApply={handleFilterApply}
+        initialFilters={activeFilters}
+      />
     </div>
   );
 };

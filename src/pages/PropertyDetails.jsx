@@ -68,7 +68,7 @@ function Card () {
 
     {/* image section */}
 
-   <div className='grid grid-cols-2 sm:grid-cols-4 mx-4 sm:mx-12 md:mx-24 lg:mx-48 gap-2'>
+   <div className='grid grid-cols-2 sm:grid-cols-4 mx-4 sm:mx-12 md:mx-24 lg:mx-48 gap-2 overflow-x-hidden'>
     <Link to="/property-tour">
       <img src={PropertyDImg1} alt="" className=' row-span-2 col-span-2 ' />
     </Link>

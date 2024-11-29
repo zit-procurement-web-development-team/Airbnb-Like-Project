@@ -112,77 +112,77 @@ const Footer = () => {
           </div>
         </div>
       </div>
-        <div class="container px-5 py-12 mx-auto border-t border-gray-200">
-            <div class="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
-            <div class="lg:w-1/6 md:w-1/2 w-full mx-20">
-                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Support</h2>
-                <nav class="list-none mb-10">
+        <div className="container px-5 py-12 mx-auto border-t border-gray-200">
+            <div className="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
+            <div className="lg:w-1/6 md:w-1/2 w-full mx-20">
+                <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Support</h2>
+                <nav className="list-none mb-10">
                 <li>
-                    <a class="text-gray-600 hover:text-gray-800">Help Center</a>
+                    <a className="text-gray-600 hover:text-gray-800">Help Center</a>
                 </li>
                 <li>
-                    <a class="text-gray-600 hover:text-gray-800">AirCover</a>
+                    <a className="text-gray-600 hover:text-gray-800">AirCover</a>
                 </li>
                 <li>
-                    <a class="text-gray-600 hover:text-gray-800">Anti-discrimination</a>
+                    <a className="text-gray-600 hover:text-gray-800">Anti-discrimination</a>
                 </li>
                 <li>
-                    <a class="text-gray-600 hover:text-gray-800">Disability support</a>
+                    <a className="text-gray-600 hover:text-gray-800">Disability support</a>
                 </li>
                 <li>
-                    <a class="text-gray-600 hover:text-gray-800">Cancellation options</a>
+                    <a className="text-gray-600 hover:text-gray-800">Cancellation options</a>
                 </li>
                 <li>
-                    <a class="text-gray-600 hover:text-gray-800">Report neighbourhood concern</a>
-                </li>
-                </nav>
-            </div>
-            <div class="lg:w-1/6 md:w-1/2 w-full mx-20">
-                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Hosting</h2>
-                <nav class="list-none mb-10">
-                <li>
-                    <a class="text-gray-600 hover:text-gray-800">Airbnb your home</a>
-                </li>
-                <li>
-                    <a class="text-gray-600 hover:text-gray-800">AirCover for Hosts</a>
-                </li>
-                <li>
-                    <a class="text-gray-600 hover:text-gray-800">Hosting resources</a>
-                </li>
-                <li>
-                    <a class="text-gray-600 hover:text-gray-800">Community forum</a>
-                </li>
-                <li>
-                    <a class="text-gray-600 hover:text-gray-800">Hosting responsibly</a>
-                </li>
-                <li>
-                    <a class="text-gray-600 hover:text-gray-800">Join a free hosting class</a>
-                </li>
-                <li>
-                    <a class="text-gray-600 hover:text-gray-800">Fimd a co-host</a>
+                    <a className="text-gray-600 hover:text-gray-800">Report neighbourhood concern</a>
                 </li>
                 </nav>
             </div>
-            <div class="lg:w-1/6 md:w-1/2 w-full mx-20">
-                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Airbnb</h2>
-                <nav class="list-none mb-10">
+            <div className="lg:w-1/6 md:w-1/2 w-full mx-20">
+                <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Hosting</h2>
+                <nav className="list-none mb-10">
                 <li>
-                    <a class="text-gray-600 hover:text-gray-800">Newsroom</a>
+                    <a className="text-gray-600 hover:text-gray-800">Airbnb your home</a>
                 </li>
                 <li>
-                    <a class="text-gray-600 hover:text-gray-800">New features</a>
+                    <a className="text-gray-600 hover:text-gray-800">AirCover for Hosts</a>
                 </li>
                 <li>
-                    <a class="text-gray-600 hover:text-gray-800">Careers</a>
+                    <a className="text-gray-600 hover:text-gray-800">Hosting resources</a>
                 </li>
                 <li>
-                    <a class="text-gray-600 hover:text-gray-800">Investors</a>
+                    <a className="text-gray-600 hover:text-gray-800">Community forum</a>
                 </li>
                 <li>
-                    <a class="text-gray-600 hover:text-gray-800">Gift cards</a>
+                    <a className="text-gray-600 hover:text-gray-800">Hosting responsibly</a>
                 </li>
                 <li>
-                    <a class="text-gray-600 hover:text-gray-800">Airbnb.org emergency styles</a>
+                    <a className="text-gray-600 hover:text-gray-800">Join a free hosting class</a>
+                </li>
+                <li>
+                    <a className="text-gray-600 hover:text-gray-800">Fimd a co-host</a>
+                </li>
+                </nav>
+            </div>
+            <div className="lg:w-1/6 md:w-1/2 w-full mx-20">
+                <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Airbnb</h2>
+                <nav className="list-none mb-10">
+                <li>
+                    <a className="text-gray-600 hover:text-gray-800">Newsroom</a>
+                </li>
+                <li>
+                    <a className="text-gray-600 hover:text-gray-800">New features</a>
+                </li>
+                <li>
+                    <a className="text-gray-600 hover:text-gray-800">Careers</a>
+                </li>
+                <li>
+                    <a className="text-gray-600 hover:text-gray-800">Investors</a>
+                </li>
+                <li>
+                    <a className="text-gray-600 hover:text-gray-800">Gift cards</a>
+                </li>
+                <li>
+                    <a className="text-gray-600 hover:text-gray-800">Airbnb.org emergency styles</a>
                 </li>
                 </nav>
             </div>
@@ -193,7 +193,7 @@ const Footer = () => {
                 <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
                 <p className="text-gray-500 text-sm text-center sm:text-left">© {footerDate} Airbnb,Inc. 
                     <a className="mx-2" href="#">Terms</a> . <a className="mx-2" href="#">Sitemap</a> . <a className="mx-2" href="#">Privacy</a>
-                    <a href="https://zongeatech.com" class="text-gray-600 ml-2" target="_blank" rel="noopener noreferrer">Created by:Zongea Institute Of Technology</a>
+                    <a href="https://zongeatech.com" className="text-gray-600 ml-2" target="_blank" rel="noopener noreferrer">Created by:Zongea Institute Of Technology</a>
                 </p>
                 <div className="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm flex align-middle items-center ">
                 <LanguageAndRegion />
