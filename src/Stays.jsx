@@ -90,7 +90,7 @@ const AppContent = () => {
 };
 
 // Main App component
-function App() {
+function Stays() {
   return (
     <PropertyProvider>
       <AppContent />
@@ -98,4 +98,4 @@ function App() {
   );
 }
 
-export default App;
+export default Stays;

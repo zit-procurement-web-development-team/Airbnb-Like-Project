@@ -31,7 +31,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center">
           {/* Left Column - Search Interface */}
-          <div className="w-full lg:w-2/5 lg:pr-8 z-10">
+          <div className="w-full lg:w-2/5 lg:pr-8 z-10 ">
             <div className="bg-white p-6 rounded-2xl shadow-lg lg:translate-x-4">
               <h2 className="text-3xl font-bold mb-3">
                 House vacation rentals in Paso Robles
@@ -90,7 +90,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Column - Large Image */}
-          <div className="w-full lg:w-3/5 mt-8 lg:mt-0">
+          <div className="w-full lg:w-3/5 mt-8 lg:mt-0 right-0">
             <div className="relative h-[300px] lg:h-[500px] rounded-2xl overflow-hidden">
               <img
                 src={house}
