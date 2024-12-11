@@ -78,7 +78,7 @@ const Header = ({ onFiltersChange, onTypeChange, selectedType }) => {
 
             {/* Right Section */}
             <div className="flex items-center gap-4">
-              <Link to="/star-way-your-home" className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-gray-100 transition">
+              <Link to="/host/homes" className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-gray-100 transition">
                 Become a Host
               </Link>
               <div className="relative" ref={languageMenuRef}>
@@ -105,13 +105,18 @@ const Header = ({ onFiltersChange, onTypeChange, selectedType }) => {
 
                 {/* User Menu Dropdown */}
                 {isUserMenuOpen && (
-                  <div className="absolute right-0 top-[calc(100%+0.5rem)] w-[240px] bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                  <div className="absolute right-0 top-[calc(100%+0.5rem)] w-[240px] bg-white rounded-xl shadow-md z-50 border border-gray-200 overflow-hidden">
+                   
                     <div className="py-2">
-                      <Link to="/signup" className="w-full px-4 py-3 hover:bg-gray-100 transition text-left font-semibold">
+                    <Link to="/signup">
+                      <button className="w-full px-4 py-3 hover:bg-gray-100 transition text-left font-semibold">
                         Sign up
+                      </button>
                       </Link>
-                      <Link to="/login" className="w-full px-4 py-3 hover:bg-gray-100 transition text-left">
+                      <Link to="/login">
+                      <button className="w-full px-4 py-3 hover:bg-gray-100 transition text-left">
                         Log in
+                      </button>
                       </Link>
                     </div>
                     <div className="border-t py-2">

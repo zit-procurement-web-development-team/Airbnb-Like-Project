@@ -6,6 +6,7 @@ import SettingPopUp from "./SettingPopUp";
 import LanguageAndRegion from "./LanguageAndRegion";
 import SubNav2 from "./SubNav2";
 import LargerSearchBar from "./LargerSearchBar";
+import { Link } from 'react-router-dom';
 
 const StickyHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -64,9 +65,11 @@ const StickyHeader = () => {
 
           {/* Right Section */}
           <div className="flex items-center gap-4">
+            <Link to='/become-a-host'>
             <button className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-gray-100 transition">
               Become a Host
             </button>
+            </Link>
             <button className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">

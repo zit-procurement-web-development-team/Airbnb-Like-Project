@@ -14,10 +14,13 @@ export default function StarWayYourHomeHeader() {
                     />
                 </Link>
                 
-                <button className="inline-flex items-center font-bold text-white bg-gray-100 border-0 py-3 px-4 focus:outline-none hover:bg-gradient-to-r rounded-full p-7 bg-gradient-to-r from-red-500 to-pink-500 text-base mt-4 md:mt-0">
-                    List your home
-                </button>
-            </div>
+                    <Link to="/become-a-host">
+                        <button className="inline-flex items-center font-bold text-white bg-gray-100 border-0 py-3 px-4 focus:outline-none hover:bg-gradient-to-r rounded-full p-7 bg-gradient-to-r from-red-500 to-pink-500 text-base mt-4 md:mt-0">
+                            List your home
+                        </button>
+                    </Link>
+
+                </div>
         </header>
     );
 }

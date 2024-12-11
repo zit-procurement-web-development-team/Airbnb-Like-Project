@@ -13,10 +13,18 @@ import { AiOutlineComment } from "react-icons/ai";
 import { CiHome } from "react-icons/ci";
 import smart from "/assets/starwayhomeimgs/starwayhome4.jpeg";
 import uncle from "/assets/starwayhomeimgs/starwayhome2.jpeg"
+import { useNavigate } from 'react-router-dom';
+
 
 
 
 function ListYourHome() {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/become-a-host');
+  };
+
   return (
     <main>
       {/* Hero Section */}
@@ -55,8 +63,11 @@ function ListYourHome() {
                     <p className="text-gray-900 text-lg title-font font-medium mb-3">Get 1:1 support from experienced hosts at any time</p>
                   </div>
                 </div>
-                <button className="flex mx-auto mt-16 text-white bg-black mt-{-40px} border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded-full text-lg">
-                  List your home
+                <button
+                  onClick={handleGetStarted}
+                  className="mb-8 px-8 py-4 bg-gradient-to-r from-rose-500 to-pink-500 text-white text-lg font-semibold rounded-lg hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Get Started
                 </button>
                 <section class="text-gray-600 body-font">
             <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
@@ -113,10 +124,9 @@ function ListYourHome() {
 
 
 
-
-
-
     {/* ======================================================================================================== */}
+
+
 
 
 
@@ -157,8 +167,6 @@ function ListYourHome() {
        </div>
       </div>
     </div>
-
-
 
 
     <div className="max-w-sm h-50  overflow-hidden rounded  w-full shadow-lg bg-gray-100">
@@ -202,19 +210,10 @@ function ListYourHome() {
 
 
 
+    </section>
 
 
-
-
-
-</section>
-
-
-
-
-
-
-
+    {/* ---------------------------------------------------------------- */}
 
 
               </div>
@@ -351,8 +350,6 @@ function ListYourHome() {
   </div>
   </div>
 
-    
-
 
     {/* ---------------------------------------------------------------- */}
     <section class="text-gray-600 body-font">
@@ -413,12 +410,6 @@ function ListYourHome() {
 
  
 </section>
-
-
-
-
-
-
 
 
 
