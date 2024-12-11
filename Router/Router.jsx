@@ -8,6 +8,8 @@ import PropertyDetails from '../src/pages/PropertyDetails';
 import PropertyTour from '../src/pages/PropertyTour';
 import StarWayYourHome from '../src/pages/StarWayYourHome';
 import Stays from '../src/components/Stays';
+import SignUp from '../src/regestarAndLogin/SignUp';
+import Login from '../src/regestarAndLogin/Login';
 
 // Host flow components
 import DashBoardHost from '../src/components/starwayhome/DashBoardHost';
@@ -49,6 +51,8 @@ function AppRouter() {
         <Route path="/experiences/:id" element={<PropertyTour />} />
         <Route path="/host/homes" element={<StarWayYourHome />} />
         <Route path="/host/stays" element={<Stays />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
 
         {/* Host onboarding flow */}
         <Route path="/become-a-host">
