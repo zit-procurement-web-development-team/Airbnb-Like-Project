@@ -6,11 +6,22 @@ import NavigationFooter from '../shared/NavigationFooter';
 import DashboardHeader from '../shared/DashboardHeader';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { PropertyContext } from '../../context/PropertyContext';
+import { useNavigate } from 'react-router-dom';
 
 const MAX_FILES = 15;
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
 export default function PhotoUploader() {
+    const navigate = useNavigate();
+    const handleNext = () => {
+       
+        navigate('/become-a-host/title');
+      };
+    
+      const handleBack = () => {
+        navigate(-1);
+      };
+      
     const { propertyData, updatePropertyData } = useContext(PropertyContext);
     const [photos, setPhotos] = useState(propertyData.photos || []);
     const [uploading, setUploading] = useState({});
@@ -115,6 +126,7 @@ export default function PhotoUploader() {
         setPhotos(items);
         updatePropertyData('photos', items);
     };
+
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex flex-col">
@@ -264,10 +276,27 @@ export default function PhotoUploader() {
                     </div>
                 </div>
             </main>
-
+            {/* <footer className="fixed bottom-0 left-0 right-0 bg-white border-t p-6">
+        <div className="max-w-3xl mx-auto flex justify-between items-center">
+          <button
+            onClick={handleBack}
+            className="text-sm font-semibold underline"
+          >
+            Back
+          </button>
+          <button
+            onClick={handleNext}
+            className="px-6 py-3 rounded-lg text-white bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600"
+          >
+            Next
+          </button>
+        </div>
+      </footer> */}
             <NavigationFooter 
-                nextPath="/am"
-                prevPath="/amenities"
+                // nextPath="/become-a-host/title"
+                // prevPath="/photos"
+                onNext={handleNext}
+                onBack={handleBack}
                 disableNext={photos.length === 0}
             />
         </div>

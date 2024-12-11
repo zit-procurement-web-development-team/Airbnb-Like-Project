@@ -1,46 +1,89 @@
 // src/router.js
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
+// Main pages
 import Home from '../src/pages/Home';
 import PropertyDetails from '../src/pages/PropertyDetails';
-import PropertyAmenities from '../src/components/starwayhome/PropertyAmenities';
 import PropertyTour from '../src/pages/PropertyTour';
 import StarWayYourHome from '../src/pages/StarWayYourHome';
+import Stays from '../src/components/Stays';
+
+// Host flow components
 import DashBoardHost from '../src/components/starwayhome/DashBoardHost';
-import PlaceTypeSelection from '../src/components/starwayhome/PlaceTypeSelection';
+import AboutYourPlace from '../src/components/starwayhome/AboutYourPlace';
+import StructureType from '../src/components/starwayhome/StructureType';
+// import PrivacyType from '../src/components/starwayhome/PrivacyType';
 import LocationPicker from '../src/components/starwayhome/LocationPicker';
-import SpaceTypeSelector from '../src/components/starwayhome/SpaceTypeSelector';
 import AddressConfirm from '../src/components/starwayhome/AddressConfirm';
-import BasicDetailsSelector from '../src/components/starwayhome/BasicDetailsSelector';
+import Stepintroduction from '../src/components/starwayhome/Stepintroduction';
+import FloorPlan from '../src/components/starwayhome/FloorPlan';
+import StandoutAmenities from '../src/components/starwayhome/StandoutAmenities';
 import PhotoUploader from '../src/components/starwayhome/PhotoUploader';
-// import AmenitiesSelector from '../src/components/starwayhome/AmenitiesSelector';
 import TitleSelector from '../src/components/starwayhome/TitleSelector';
-import StepIntroduction from '../src/components/starwayhome/StepIntroduction';
+import PropertyDescription from '../src/components/starwayhome/PropertyDescription';
+import FinishSetup from '../src/components/starwayhome/FinishSetup';
+import PricingSettings from '../src/components/starwayhome/PricingSettings';
+import LegalInfo from '../src/components/starwayhome/LegalInfo';
 import ReviewDetails from '../src/components/starwayhome/ReviewDetails';
 import CompletionPage from '../src/components/starwayhome/CompletionPage';
 
+// Host dashboard components
+import HostLayout from './components/host/HostLayout';
+import HostDashboard from './components/host/HostDashboard';
+import Listings from './components/host/Listings';
+import Reservations from './components/host/Reservations';
+import Earnings from './components/host/Earnings';
+import Insights from './components/host/Insights';
+
+// Context
+import { StepsProvider } from '../src/context/StepsContext';
+
 function AppRouter() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/star-way-your-home" element={<StarWayYourHome />} />
-      <Route path="/dash-board-host" element={<DashBoardHost />} />
-      <Route path="/place-type" element={<PlaceTypeSelection />} />
-      <Route path="/space-type" element={<SpaceTypeSelector />} />
-      <Route path="/basic-details" element={<BasicDetailsSelector />} />
-      <Route path="/step-introduction" element={<StepIntroduction />} />
-      {/* <Route path="/amenities" element={<AmenitiesSelector />} /> */}
-      <Route path="/photos" element={<PhotoUploader />} />
-      <Route path="/title" element={<TitleSelector />} />
-      <Route path="/location" element={<LocationPicker />} />
-      <Route path="/confirm-address" element={<AddressConfirm />} />
-      <Route path="/review" element={<ReviewDetails />} />
-      <Route path="/completion" element={<CompletionPage />} />
-      <Route path="/property-details/:id" element={<PropertyDetails />} />
-      <Route path="/property-tour/:id" element={<PropertyTour />} />
-      <Route path="/amenities" element={<PropertyAmenities />} />
-    </Routes>
+    <StepsProvider>
+      <Routes>
+        {/* Main public routes */}
+        <Route path="/" element={<Home />} />
+        <Route path="/rooms/:id" element={<PropertyDetails />} />
+        <Route path="/experiences/:id" element={<PropertyTour />} />
+        <Route path="/host/homes" element={<StarWayYourHome />} />
+        <Route path="/host/stays" element={<Stays />} />
+
+        {/* Host onboarding flow */}
+        <Route path="/become-a-host">
+          <Route index element={<DashBoardHost />} />
+          <Route path="about-your-place" element={<AboutYourPlace />} />
+          <Route path="structure-type" element={<StructureType />} />
+          <Route path="step-introduction" element={<Stepintroduction />} />
+          <Route path="location" element={<LocationPicker />} />
+          <Route path="address" element={<AddressConfirm />} />
+          <Route path="floor-plan" element={<FloorPlan />} />
+          <Route path="amenities" element={<StandoutAmenities />} />
+          <Route path="photos" element={<PhotoUploader />} />
+          <Route path="title" element={<TitleSelector />} />
+          <Route path="description" element={<PropertyDescription />} />
+          <Route path="finish-setup" element={<FinishSetup />} />
+          <Route path="pricing" element={<PricingSettings />} />
+          <Route path="legal" element={<LegalInfo />} />
+          <Route path="review" element={<ReviewDetails />} />
+          <Route path="completion" element={<CompletionPage />} />
+        </Route>
+
+        {/* Host dashboard routes */}
+        <Route path="/hosting" element={<HostLayout />}>
+          <Route index element={<Navigate to="/hosting/dashboard" replace />} />
+          <Route path="dashboard" element={<HostDashboard />} />
+          <Route path="listings" element={<Listings />} />
+          <Route path="reservations" element={<Reservations />} />
+          <Route path="earnings" element={<Earnings />} />
+          <Route path="insights" element={<Insights />} />
+        </Route>
+
+        {/* Catch-all route for 404 */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </StepsProvider>
   );
 }
 

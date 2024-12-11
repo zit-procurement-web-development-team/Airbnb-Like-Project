@@ -78,7 +78,7 @@ const Header = ({ onFiltersChange, onTypeChange, selectedType }) => {
 
             {/* Right Section */}
             <div className="flex items-center gap-4">
-              <Link to="/star-way-your-home" className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-gray-100 transition">
+              <Link to="/host/homes" className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-gray-100 transition">
                 Become a Host
               </Link>
               <div className="relative" ref={languageMenuRef}>

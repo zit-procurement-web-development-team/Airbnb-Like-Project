@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ReactCanvasConfetti from 'react-canvas-confetti';
 import { useNavigate } from 'react-router-dom';
 import { useProperty } from '../../context/PropertyContext';
-import { FaCheckCircle, FaHome, FaArrowRight } from 'react-icons/fa';
+import { FaCheckCircle, FaHome, FaArrowRight, FaTachometerAlt } from 'react-icons/fa';
 
 const canvasStyles = {
     position: 'fixed',
@@ -88,13 +88,15 @@ export default function CompletionPage() {
     }, [currentStep, fireConfetti]);
 
     const handleViewListing = () => {
-        // Navigate to the property details page
-        // You might want to replace this with the actual property ID
-        navigate('/property-details/1');
+        navigate('/hosting/listings');
     };
 
     const handleCreateAnother = () => {
-        navigate('/star-way-your-home');
+        navigate('/become-a-host');
+    };
+
+    const handleGoToDashboard = () => {
+        navigate('/hosting/dashboard');
     };
 
     return (
@@ -157,7 +159,7 @@ export default function CompletionPage() {
                                 onClick={handleViewListing}
                                 className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold flex items-center justify-center space-x-2 hover:bg-indigo-700 transition-colors"
                             >
-                                <span>View Listing</span>
+                                <span>View Your Listings</span>
                                 <FaArrowRight />
                             </motion.button>
                             <motion.button
@@ -169,6 +171,16 @@ export default function CompletionPage() {
                                 Create Another Listing
                             </motion.button>
                         </div>
+
+                        <motion.button
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            onClick={handleGoToDashboard}
+                            className="mt-4 flex items-center justify-center space-x-2 text-gray-600 hover:text-indigo-600 transition-colors"
+                        >
+                            <FaTachometerAlt />
+                            <span>Go to Host Dashboard</span>
+                        </motion.button>
                     </motion.div>
                 )}
             </div>

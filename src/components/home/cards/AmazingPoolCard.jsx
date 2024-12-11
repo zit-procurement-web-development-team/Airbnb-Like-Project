@@ -25,7 +25,7 @@ const AmazingPoolCard = ({ images, location, date, hostname, cost }) => {
         onMouseEnter={handleCardHover}
         onMouseLeave={handleCardUnhover}
       >
-        <Link to="/property-details">
+        <Link to="/rooms/:id">
           <img
             src={images[currentIndex]}
             alt="property with pool"

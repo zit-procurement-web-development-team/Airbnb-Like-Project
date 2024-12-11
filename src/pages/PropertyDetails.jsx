@@ -69,19 +69,19 @@ function Card () {
     {/* image section */}
 
    <div className='grid grid-cols-2 sm:grid-cols-4 mx-4 sm:mx-12 md:mx-24 lg:mx-48 gap-2 overflow-x-hidden'>
-    <Link to="/property-tour">
+    <Link to="/experiences/:id">
       <img src={PropertyDImg1} alt="" className=' row-span-2 col-span-2 ' />
     </Link>
-    <Link to="/property-tour">
+    <Link to="/experiences/:id">
       <img src={PropertyDImg2} alt="" className='w-44 h-30 rounded-sm' />
     </Link>  
-    <Link to="/property-tour">
+    <Link to="/experiences/:id">
       <img src={PropertyDImg3} alt="" className='w-44 h-30 rounded-sm' />
     </Link>  
-    <Link to="/property-tour">
+    <Link to="/experiences/:id">
       <img src={PropertyDImg4} alt="" className='w-44 h-30 rounded-sm' />
     </Link>  
-    <Link to="/property-tour">
+    <Link to="/experiences/:id">
       <img src={PropertyDImg5} alt="" className='w-44 h-30 rounded-sm' />
     </Link>  
       <div className='text-center text-sm text-gray-600 flex justify-evenly m-1 w-36 bg-gray-200

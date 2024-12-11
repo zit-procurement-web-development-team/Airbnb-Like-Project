@@ -33,11 +33,11 @@ export default function AddressConfirm() {
             ...propertyData,
             addressDetails: formData
         });
-        navigate('/basic-details');
+        navigate('/become-a-host/floor-plan');
     };
 
     const handleBack = () => {
-        navigate(-1);
+        navigate('/become-a-host/location');
     };
 
     const isFormValid = () => {

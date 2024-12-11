@@ -203,12 +203,12 @@ export default function LocationPicker() {
                 address,
                 location
             });
-            navigate('/confirm-address');
+            navigate('/become-a-host/address');
         }
     };
 
     const handleBack = () => {
-        navigate(-1);
+        navigate('/become-a-host/structure-type');
     };
 
     return (

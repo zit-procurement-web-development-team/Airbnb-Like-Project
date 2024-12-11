@@ -25,7 +25,7 @@ const BeachfrontCard = ({ images, location, date, hostname, cost }) => {
         onMouseEnter={handleCardHover}
         onMouseLeave={handleCardUnhover}
       >
-        <Link to="/property-details">
+        <Link to="/rooms/:id">
           <img
             src={images[currentIndex]}
             alt="beachfront property"

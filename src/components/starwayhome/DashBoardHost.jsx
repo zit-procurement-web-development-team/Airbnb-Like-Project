@@ -1,3 +1,145 @@
+// import React from 'react';
+// import { motion } from 'framer-motion';
+// import { useNavigate, Link, useLocation } from 'react-router-dom';
+// import { FaHome, FaArrowRight, FaTachometerAlt } from 'react-icons/fa';
+// import StepsProgress from './StepsProgress';
+// import { useSteps } from '../../context/StepsContext';
+
+// const houseVariants = {
+//     initial: {
+//         scale: 0.8,
+//         opacity: 0,
+//         y: 20
+//     },
+//     animate: {
+//         scale: 1,
+//         opacity: 1,
+//         y: 0,
+//         transition: {
+//             duration: 0.8,
+//             ease: "easeOut"
+//         }
+//     }
+// };
+
+// const floatingAnimation = {
+//     initial: { y: 0 },
+//     animate: {
+//         y: [-10, 0, -10],
+//         transition: {
+//             duration: 4,
+//             repeat: Infinity,
+//             ease: "easeInOut"
+//         }
+//     }
+// };
+
+// export default function DashBoardHost() {
+//     const navigate = useNavigate();
+//     const location = useLocation();
+//     const { updateStep } = useSteps();
+
+//     React.useEffect(() => {
+//         updateStep(location.pathname);
+//     }, [location.pathname, updateStep]);
+
+//     const handleNext = () => {
+//         navigate('/become-a-host/about-your-place');
+//     };
+
+//     return (
+//         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+//             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+//                 {/* Top Navigation Bar */}
+//                 <div className="mb-12 flex justify-between items-center">
+//                     <Link 
+//                         to="/hosting/dashboard"
+//                         className="flex items-center space-x-2 text-indigo-600 hover:text-indigo-700"
+//                     >
+//                         <FaTachometerAlt className="w-5 h-5" />
+//                         <span className="font-semibold">Go to Host Dashboard</span>
+//                     </Link>
+//                 </div>
+
+//                 {/* Steps Progress */}
+//                 <StepsProgress />
+
+//                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-12">
+//                     {/* Left Column - Text Content */}
+//                     <motion.div
+//                         initial={{ opacity: 0, x: -20 }}
+//                         animate={{ opacity: 1, x: 0 }}
+//                         transition={{ duration: 0.6 }}
+//                         className="space-y-8"
+//                     >
+//                         <div className="space-y-4">
+//                             <motion.div
+//                                 initial={{ opacity: 0, y: -20 }}
+//                                 animate={{ opacity: 1, y: 0 }}
+//                                 transition={{ delay: 0.3 }}
+//                                 className="inline-block bg-indigo-100 rounded-full px-4 py-2 text-indigo-600 font-semibold"
+//                             >
+//                                 Step 1
+//                             </motion.div>
+//                             <motion.h1
+//                                 initial={{ opacity: 0, y: -20 }}
+//                                 animate={{ opacity: 1, y: 0 }}
+//                                 transition={{ delay: 0.4 }}
+//                                 className="text-4xl sm:text-5xl font-bold text-gray-900"
+//                             >
+//                                 Tell us about your place
+//                             </motion.h1>
+//                             <motion.p
+//                                 initial={{ opacity: 0, y: -20 }}
+//                                 animate={{ opacity: 1, y: 0 }}
+//                                 transition={{ delay: 0.5 }}
+//                                 className="text-xl text-gray-600 leading-relaxed"
+//                             >
+//                                 In this step, we'll ask you which type of property you have and if guests will book the entire place or just a room. Then let us know the location and how many guests can stay.
+//                             </motion.p>
+//                         </div>
+
+//                         <motion.button
+//                             initial={{ opacity: 0, y: 20 }}
+//                             animate={{ opacity: 1, y: 0 }}
+//                             transition={{ delay: 0.6 }}
+//                             whileHover={{ scale: 1.02 }}
+//                             whileTap={{ scale: 0.98 }}
+//                             onClick={handleNext}
+//                             className="flex items-center space-x-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-200"
+//                         >
+//                             <span>Get Started</span>
+//                             <FaArrowRight />
+//                         </motion.button>
+//                     </motion.div>
+
+//                     {/* Right Column - Illustration */}
+//                     <motion.div
+//                         variants={houseVariants}
+//                         initial="initial"
+//                         animate="animate"
+//                         className="relative"
+//                     >
+//                         <motion.div
+//                             variants={floatingAnimation}
+//                             initial="initial"
+//                             animate="animate"
+//                             className="w-full h-96 bg-white rounded-3xl shadow-2xl p-8 flex items-center justify-center"
+//                         >
+//                             <FaHome className="w-32 h-32 text-indigo-600" />
+//                         </motion.div>
+//                     </motion.div>
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// }
+
+
+
+
+
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -36,7 +178,7 @@ export default function DashBoardHost() {
     const navigate = useNavigate();
 
     const handleNext = () => {
-        navigate('/place-type');
+        navigate('/become-a-host/about-your-place');
     };
 
     return (

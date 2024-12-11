@@ -51,11 +51,11 @@ export default function ReviewDetails() {
     };
 
     const handleNext = () => {
-        if (!propertyData.title || !propertyData.description) {
-            setError('Please complete both title and description before proceeding');
-            return;
-        }
-        navigate('/completion');
+        // if (!propertyData.title || !propertyData.description) {
+        //     setError('Please complete both title and description before proceeding');
+        //     return;
+        // }
+        navigate('/become-a-host/completion');
     };
 
     const handleBack = () => {
@@ -245,7 +245,7 @@ export default function ReviewDetails() {
             <NavigationFooter 
                 onNext={handleNext}
                 onBack={handleBack}
-                disableNext={!propertyData.title || !propertyData.description}
+                // disableNext={!propertyData.title || !propertyData.description}
             />
         </div>
     );

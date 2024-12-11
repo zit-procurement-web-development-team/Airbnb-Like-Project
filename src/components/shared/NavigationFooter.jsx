@@ -7,17 +7,22 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 const ROUTE_ORDER = [
     '/',
     '/starway-home',
-    '/dashboard-host',
-    '/place-type',
-    '/space-type',
-    '/title',
-    '/basic-details',
-    '/location',
-    '/address-confirmation',
-    '/photos',
-    '/amenities',
-    '/review',
-    '/completion'
+    '/become-a-host',
+    '/become-a-host/about-your-place',
+    '/become-a-host/structure-type',
+    '/become-a-host/location',
+    '/become-a-host/address',
+    '/become-a-host/floor-plan',
+    '/become-a-host/step-introduction',
+    '/become-a-host/amenities',
+    '/become-a-host/photos',
+    '/become-a-host/title',
+    '/become-a-host/description',
+    '/become-a-host/finish-setup',
+    '/become-a-host/pricing',
+    '/become-a-host/legal',
+    '/become-a-host/review',
+    '/become-a-host/completion',
 ];
 
 export default function NavigationFooter({ onNext, onBack, disableNext = false }) {

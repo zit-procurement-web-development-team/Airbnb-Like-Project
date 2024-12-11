@@ -44,21 +44,21 @@ export default function StepIntroduction() {
     const progressBarVariants = {
         hidden: { width: "0%" },
         visible: {
-            width: "40%",
+            width: "60%",
             transition: { duration: 1, delay: 0.5 }
         }
     };
 
     const handleNext = () => {
-        navigate('/amenities');
+        navigate('/become-a-host/amenities');
     };
 
     const handleBack = () => {
-        navigate(-1);
+        navigate('/become-a-host/floor-plan');
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex flex-col">
+        <div className="min-h-screen pb-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex flex-col">
             <div className="flex-grow grid grid-cols-1 lg:grid-cols-2">
                 {/* Left Side - Animation */}
                 <motion.div
@@ -121,8 +121,8 @@ export default function StepIntroduction() {
                 >
                     <motion.div variants={itemVariants} className="mb-6">
                         <div className="flex items-center space-x-4">
-                            <span className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-100 text-indigo-600 font-bold text-lg">
-                                2
+                            <span className="flex items-center justify-center p-2 h-12 rounded-full bg-indigo-100 text-indigo-600 font-bold text-lg">
+                               step:2
                             </span>
                             <div className="flex-1">
                                 <div className="h-2 bg-gray-100 rounded-full">
@@ -200,7 +200,7 @@ export default function StepIntroduction() {
                         </motion.div>
                     </div>
 
-                    <motion.button
+                    {/* <motion.button
                         variants={itemVariants}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -209,7 +209,7 @@ export default function StepIntroduction() {
                     >
                         <span>Continue</span>
                         <FaArrowRight />
-                    </motion.button>
+                    </motion.button> */}
                 </motion.div>
             </div>
 

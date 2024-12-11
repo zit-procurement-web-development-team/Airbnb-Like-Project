@@ -1,3 +1,132 @@
+// import React, { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import { motion } from 'framer-motion';
+// import { FaHome, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+
+// const StructureType = () => {
+//   const navigate = useNavigate();
+//   const [selectedType, setSelectedType] = useState(null);
+
+//   const structureTypes = [
+//     {
+//       id: 'house',
+//       title: 'Residential home',
+//       description: 'A standard residential house',
+//     },
+//     {
+//       id: 'cabin',
+//       title: 'Cabin',
+//       description: 'A house made with natural materials',
+//     },
+//     {
+//       id: 'villa',
+//       title: 'Villa',
+//       description: 'A luxury residence with added amenities',
+//     },
+//     {
+//       id: 'townhouse',
+//       title: 'Townhouse',
+//       description: 'A multi-floor residence attached to other units',
+//     },
+//     {
+//       id: 'cottage',
+//       title: 'Cottage',
+//       description: 'A cozy house, typically in a rural setting',
+//     },
+//     {
+//       id: 'bungalow',
+//       title: 'Bungalow',
+//       description: 'A small, single-story house',
+//     },
+//   ];
+
+//   const handleNext = () => {
+//     if (selectedType) {
+//       navigate('/become-a-host/privacy-type');
+//     }
+//   };
+
+//   const handleBack = () => {
+//     navigate('/become-a-host/about-your-place');
+//   };
+
+//   return (
+//     <div className="min-h-screen bg-white">
+//       {/* Progress bar */}
+//       <div className="fixed top-0 left-0 right-0 h-1 bg-gray-100">
+//         <div className="h-full bg-black w-[20%]" />
+//       </div>
+
+//       {/* Navigation header */}
+//       <header className="fixed top-0 left-0 right-0 h-16 flex items-center px-6 bg-white border-b">
+//         <button
+//           onClick={handleBack}
+//           className="p-2 hover:bg-gray-100 rounded-full"
+//         >
+//           <FaArrowLeft className="w-4 h-4" />
+//         </button>
+//       </header>
+
+//       <main className="pt-24 pb-32 px-6 max-w-3xl mx-auto">
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.5 }}
+//         >
+//           <h1 className="text-3xl font-semibold mb-8">
+//             Which of these best describes your place?
+//           </h1>
+
+//           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//             {structureTypes.map((type) => (
+//               <button
+//                 key={type.id}
+//                 onClick={() => setSelectedType(type.id)}
+//                 className={`p-6 border rounded-xl text-left transition-all ${
+//                   selectedType === type.id
+//                     ? 'border-black bg-gray-50'
+//                     : 'border-gray-200 hover:border-black'
+//                 }`}
+//               >
+//                 <h3 className="text-lg font-medium mb-1">{type.title}</h3>
+//                 <p className="text-gray-600">{type.description}</p>
+//               </button>
+//             ))}
+//           </div>
+//         </motion.div>
+//       </main>
+
+//       {/* Footer navigation */}
+//       <footer className="fixed bottom-0 left-0 right-0 bg-white border-t p-6">
+//         <div className="max-w-3xl mx-auto flex justify-between items-center">
+//           <button
+//             onClick={handleBack}
+//             className="text-sm font-semibold underline"
+//           >
+//             Back
+//           </button>
+//           <button
+//             onClick={handleNext}
+//             disabled={!selectedType}
+//             className={`px-6 py-3 rounded-lg text-white ${
+//               selectedType
+//                 ? 'bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600'
+//                 : 'bg-gray-200 cursor-not-allowed'
+//             }`}
+//           >
+//             Next
+//           </button>
+//         </div>
+//       </footer>
+//     </div>
+//   );
+// };
+
+// export default StructureType;
+
+
+
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DashboardHeader from '../shared/DashboardHeader';
@@ -66,9 +195,12 @@ export default function SpaceTypeSelector() {
 
     const handleNext = () => {
         if (propertyData.spaceType) {
-            navigate('/location');
+          navigate('/become-a-host/location');
         }
     };
+    const handleBack = () => {
+          navigate('/become-a-host/about-your-place');
+        };
 
     const containerVariants = {
         hidden: { opacity: 0, y: 20 },
@@ -204,10 +336,10 @@ export default function SpaceTypeSelector() {
                 </motion.div>
             </main>
 
-            <NavigationFooter 
-                nextPath="/location"
-                disableNext={!propertyData.spaceType}
+            <NavigationFooter   
                 onNext={handleNext}
+                onBack={handleBack}
+                disableNext={!propertyData.spaceType}
             />
         </div>
     );

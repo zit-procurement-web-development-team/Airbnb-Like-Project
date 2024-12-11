@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import DashboardHeader from '../shared/DashboardHeader';
 import NavigationFooter from '../shared/NavigationFooter';
 import { useProperty } from '../../context/PropertyContext';
-
+// import { useNavigate } from 'react-router-dom';
 const MAX_CHARS = 100;
 
 export default function TitleSelector() {
@@ -32,11 +32,11 @@ export default function TitleSelector() {
             return;
         }
         updatePropertyData('title', title.trim());
-        navigate('/basic-details');
+        navigate('/become-a-host/description');
     };
 
     const handleBack = () => {
-        navigate(-1);
+        navigate('/become-a-host/amenities');
     };
 
     return (
@@ -117,7 +117,7 @@ export default function TitleSelector() {
             </main>
 
             <NavigationFooter 
-                nextPath="/basic-details"
+                
                 onNext={handleNext}
                 onBack={handleBack}
                 disableNext={title.trim().length < 10}
