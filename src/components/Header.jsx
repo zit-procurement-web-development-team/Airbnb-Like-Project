@@ -107,12 +107,12 @@ const Header = ({ onFiltersChange, onTypeChange, selectedType }) => {
                 {isUserMenuOpen && (
                   <div className="absolute right-0 top-[calc(100%+0.5rem)] w-[240px] bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
                     <div className="py-2">
-                      <button className="w-full px-4 py-3 hover:bg-gray-100 transition text-left font-semibold">
+                      <Link to="/signup" className="w-full px-4 py-3 hover:bg-gray-100 transition text-left font-semibold">
                         Sign up
-                      </button>
-                      <button className="w-full px-4 py-3 hover:bg-gray-100 transition text-left">
+                      </Link>
+                      <Link to="/login" className="w-full px-4 py-3 hover:bg-gray-100 transition text-left">
                         Log in
-                      </button>
+                      </Link>
                     </div>
                     <div className="border-t py-2">
                       <Link to="/star-way-your-home" className="w-full px-4 py-3 hover:bg-gray-100 transition text-left">
